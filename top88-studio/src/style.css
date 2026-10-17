@@ -1,0 +1,201 @@
+:root {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #000;
+  background: #fff;
+  color-scheme: light;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, .button, select, input { font: inherit; }
+button, .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 28px;
+  padding: 4px 11px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background: #fff;
+  color: #000;
+  box-shadow: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 11px;
+  line-height: 1.4;
+}
+button:hover, .button:hover { color: #fff; background: #000; }
+button:active, .button:active { color: #fff; background: #000; }
+button:disabled { opacity: .35; cursor: not-allowed; }
+button:disabled:hover { color: #000; background: #fff; }
+button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible, .button:focus-within {
+  outline: 1px dotted #000;
+  outline-offset: 3px;
+}
+::selection { color: #fff; background: #000; }
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+main { max-width: 1220px; margin: 0 auto; padding: 34px 32px 24px; }
+.appTitle { margin: 0 0 29px; font-size: 18px; line-height: 1.4; font-weight: 500; letter-spacing: -.2px; }
+.workspace { display: grid; grid-template-columns: 216px minmax(0, 1fr); gap: 32px; align-items: start; }
+aside { padding-right: 25px; border-right: 1px solid #000; }
+.editor { min-width: 0; }
+.panelTitle { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 30px; }
+.panelTitle h2 { margin: 0; font-size: 13px; font-weight: 700; line-height: 1.4; }
+.editor .panelTitle select { width: 156px; font-size: 11px; }
+.sectionLabel { margin: 25px 0 18px; font-size: 11px; font-weight: 700; }
+.regionControls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 14px; min-width: 0; }
+.domainSectionTitle { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin: 7px 0 14px; }
+.domainSectionTitle, .regionChoice, .regionNote { grid-column: 1 / -1; }
+.domainSectionTitle button { min-height: 24px; padding: 3px 7px; font-size: 9px; }
+.regionChoice { display: flex; gap: 8px; margin-bottom: 16px; }
+.regionChoice select { flex: 1; font-size: 11px; }
+.regionChoice button { padding-right: 8px; padding-left: 8px; font-size: 10px; }
+.regionNote, .selectionNote { margin: 0; font-size: 10px; line-height: 1.6; }
+.selectionNote { margin-top: 15px; }
+.slider { display: block; margin-bottom: 17px; font-size: 11px; line-height: 1.5; }
+.slider output { float: right; font-size: 11px; font-variant-numeric: tabular-nums; }
+.regionSlider, .regionSlider output { font-size: 10px; }
+.regionSlider { margin-bottom: 13px; }
+.slider > span { display: none; }
+.slider input { display: block; width: 100%; height: 18px; margin: 8px 0 0; appearance: none; background: transparent; cursor: pointer; }
+.slider input::-webkit-slider-runnable-track { height: 1px; background: #000; }
+.slider input::-webkit-slider-thumb { width: 10px; height: 15px; margin-top: -7px; border: 1px solid #000; border-radius: 0; background: #fff; appearance: none; }
+.slider input::-moz-range-track { height: 1px; background: #000; }
+.slider input::-moz-range-thumb { width: 8px; height: 13px; border: 1px solid #000; border-radius: 0; background: #fff; }
+.selectLabel { display: block; font-size: 11px; line-height: 1.5; }
+.selectLabel select { width: 100%; margin-top: 8px; font-size: 10px; }
+select {
+  min-width: 0;
+  max-width: 100%;
+  min-height: 28px;
+  padding: 4px 27px 4px 7px;
+  border: 1px solid #000;
+  border-radius: 0;
+  background-color: #fff;
+  background-image: linear-gradient(45deg, transparent 50%, #000 50%), linear-gradient(135deg, #000 50%, transparent 50%);
+  background-position: calc(100% - 11px) 50%, calc(100% - 7px) 50%;
+  background-size: 4px 4px;
+  background-repeat: no-repeat;
+  color: #000;
+  appearance: none;
+  cursor: pointer;
+}
+input[type="checkbox"] { display: inline-grid; place-content: center; width: 12px; height: 12px; margin: 0 5px 0 0; border: 1px solid #000; border-radius: 0; background: #fff; appearance: none; vertical-align: -2px; cursor: pointer; }
+input[type="checkbox"]:checked::after { content: ""; width: 6px; height: 6px; background: #000; }
+.material { margin-top: 12px; font-size: 10px; }
+.material small { font-size: inherit; }
+.projectActions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; padding-top: 18px; border-top: 1px solid #000; }
+.projectActions button, .projectActions .button { flex: 1; min-width: 0; padding-right: 8px; padding-left: 8px; font-size: 10px; white-space: nowrap; }
+.canvasToolbar { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 18px 0 12px; font-size: 10px; }
+.canvasToolbar > span { display: flex; align-items: center; gap: 6px; }
+.dot { display: inline-block; width: 7px; height: 7px; margin-left: 9px; border: 1px solid #000; }
+.dot:first-child { margin-left: 0; }
+.loadSymbol { border-radius: 50%; }
+.supportSymbol { background: repeating-linear-gradient(135deg, #000 0 1px, #fff 1px 3px); }
+.avoidSymbol { border-style: dashed; }
+.editor > svg { display: block; width: 100%; border: 1px solid #000; background: #fff; touch-action: none; }
+svg text { font: 9px Helvetica, Arial, sans-serif; pointer-events: none; }
+svg .draggable { cursor: grab; }
+svg .draggable:active { cursor: grabbing; }
+svg .resize { cursor: nwse-resize; }
+.hint { padding: 11px 0 17px; font-size: 10px; line-height: 1.6; }
+.inspector { padding-top: 16px; border-top: 1px solid #000; }
+.objectBar { display: flex; align-items: center; gap: 8px; }
+.objectBar select { width: 80px; font-size: 11px; }
+.objectBar button { font-size: 10px; }
+.delete { margin-left: auto; }
+.fields { display: flex; align-items: center; flex-wrap: wrap; gap: 13px; margin-top: 19px; }
+.field { display: flex; flex: 1; flex-direction: column; gap: 7px; min-width: 55px; max-width: 93px; font-size: 10px; }
+.field input { width: 100%; min-height: 28px; padding: 5px 7px; border: 1px solid #000; border-radius: 0; background: #fff; color: #000; font-size: 11px; }
+.nodeInfo { margin-left: auto; font-size: 10px; }
+.nodeInfo b { display: block; margin-top: 7px; font-size: 12px; font-weight: 400; font-variant-numeric: tabular-nums; }
+.shortcutHint { margin-top: 20px; font-size: 9px; line-height: 1.8; }
+.shortcutHint span { margin-left: 4px; }
+kbd { padding: 1px 3px; border: 1px solid #000; border-radius: 2px; font: inherit; }
+.output { margin-top: 30px; border-top: 1px solid #000; border-bottom: 1px solid #000; }
+.output > summary { padding: 15px 0; font-size: 12px; font-weight: 700; cursor: pointer; }
+.exportWarning { margin-left: 14px; font-size: 10px; font-weight: 400; }
+.output[open] > summary { border-bottom: 1px solid #000; }
+.codeHead { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; }
+.codeHead p { margin: 0; font-size: 11px; }
+.actions { display: flex; gap: 8px; padding-right: 2px; }
+.primary { border-width: 2px; padding: 3px 10px; }
+.codeTabs { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 18px; border-bottom: 1px solid #000; }
+.codeTabs button { min-height: 30px; padding: 6px 0; border: 0; border-radius: 0; font-size: 11px; }
+.codeTabs button:hover { color: #000; background: #fff; text-decoration: underline; }
+.codeTabs .active { border-bottom: 2px solid #000; }
+.codeTabs > span { display: flex; align-items: center; gap: 5px; margin-left: auto; font-size: 10px; }
+.valid, .invalid { color: #000; }
+pre { max-height: 265px; margin: 0; padding: 20px 0; overflow: auto; color: #000; background: #fff; font: 11px/1.8 Monaco, "Courier New", monospace; tab-size: 2; }
+.handoff { max-width: 800px; padding: 14px 0 18px; border-top: 1px solid #000; font-size: 10px; line-height: 1.7; }
+.errors { padding: 8px 0; color: #000; background: #fff; }
+.errors p::before { content: "! "; font-weight: 700; }
+footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; padding-top: 15px; font-size: 9px; line-height: 1.6; }
+.notice:not(:empty) { position: fixed; bottom: 24px; left: 50%; z-index: 10; max-width: 90%; padding: 14px 22px; border: 1px solid #000; background: #fff; color: #000; transform: translateX(-50%); font-size: 12px; cursor: pointer; }
+
+@media (max-width: 1000px) {
+  main { padding: 26px 24px 20px; }
+  .workspace { grid-template-columns: 198px minmax(0, 1fr); gap: 24px; }
+  aside { padding-right: 21px; }
+  .projectActions { gap: 6px; }
+}
+@media (max-width: 760px) {
+  main { max-width: 660px; padding: 22px 20px; }
+  .workspace { grid-template-columns: minmax(0, 1fr); gap: 29px; }
+  .editor { grid-row: 1; }
+  aside { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 24px; padding: 20px 0 0; border-top: 1px solid #000; border-right: 0; }
+  aside .panelTitle, .sectionLabel, .material, .projectActions { grid-column: 1 / -1; }
+  .regionControls { grid-column: 1 / -1; column-gap: 24px; }
+  .regionControls .sectionLabel { margin-top: 8px; }
+  .regionChoice select { flex: 0 1 110px; }
+  .sectionLabel { margin-top: 19px; }
+  .slider { margin-bottom: 18px; }
+  .selectLabel { align-self: start; }
+  .projectActions { justify-content: flex-start; margin-top: 20px; padding-top: 0; border-top: 0; }
+  .projectActions button, .projectActions .button { flex: 0 1 auto; padding-right: 12px; padding-left: 12px; }
+  .material { margin-top: 0; }
+  .output { margin-top: 25px; }
+}
+@media (max-width: 420px) {
+  main { padding: 17px 15px 20px; }
+  .appTitle { margin-bottom: 22px; font-size: 16px; }
+  .panelTitle { gap: 10px; }
+  .panelTitle h2 { font-size: 12px; }
+  .editor .panelTitle h2 { max-width: 135px; }
+  .editor .panelTitle select { width: 138px; font-size: 10px; }
+  .canvasToolbar { padding-top: 14px; }
+  .canvasToolbar > span { gap: 4px; font-size: 9px; }
+  .dot { margin-left: 4px; }
+  .hint { padding-bottom: 13px; font-size: 9px; }
+  .objectBar { gap: 6px; }
+  .objectBar select { width: 57px; }
+  .objectBar button { min-height: 28px; padding: 4px 7px; font-size: 9px; }
+  .fields { gap: 8px; margin-top: 15px; }
+  .field { min-width: 49px; font-size: 9px; }
+  .field input { padding: 5px; }
+  .nodeInfo { flex-basis: 100%; margin: 4px 0 0; }
+  .nodeInfo b { display: inline; margin-left: 5px; font-size: 10px; }
+  aside { column-gap: 20px; }
+  .selectLabel { grid-column: 1 / -1; }
+  .selectLabel select { font-size: 11px; }
+  .codeTabs { flex-wrap: wrap; gap: 10px 17px; }
+  .codeTabs > span { flex-basis: 100%; margin: 0 0 10px; font-size: 9px; }
+  .codeHead { gap: 10px; }
+  .actions button { padding-right: 8px; padding-left: 8px; font-size: 10px; }
+  footer { font-size: 8px; }
+}
